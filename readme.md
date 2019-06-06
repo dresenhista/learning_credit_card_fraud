@@ -1,4 +1,4 @@
-#Predicting Fraud with Logistic Regression on top of Oversampling
+# Predicting Fraud with Logistic Regression on top of Oversampling
 ###  **This is a pretty long tutorial and I know how hard it is to go through, feel free to skip a few blocks of code if you need**
 
 One of the oldest problems in Statistics is to deal with unbalanced data, for example, surviving data, credit risk, fraud. 
