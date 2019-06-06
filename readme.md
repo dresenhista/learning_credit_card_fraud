@@ -1,10 +1,4 @@
-<code><script>
-var myUrl = 'http://andresa.me/fraud_analysis_oversampling/';
- 
-if(window.top.location.href !== myUrl) {
-    window.top.location.href = myUrl;
-}
-</script></code>
+
 ###  **This is a pretty long tutorial and I know how hard it is to go through, hopefully you may skip a few blocks of code if you need**
 
 One of the oldest problem in Statistics is to deal with unbalanced data, for example, surviving data, credit risk, fraud. 
