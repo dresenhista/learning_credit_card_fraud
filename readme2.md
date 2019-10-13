@@ -1,13 +1,7 @@
-<code><script>
-var myUrl = 'http://andresa.me/fraud_analysis_oversampling/';
- 
-if(window.top.location.href !== myUrl) {
-    window.top.location.href = myUrl;
-}
-</script></code>
-###  **This is a pretty long tutorial and I know how hard it is to go through, hopefully you may skip a few blocks of code if you need**
+# Predicting Fraud with Logistic Regression on top of Oversampling
+###  **This is a pretty long tutorial and I know how hard it is to go through, feel free to skip a few blocks of code if you need**
 
-One of the oldest problem in Statistics is to deal with unbalanced data, for example, surviving data, credit risk, fraud. 
+One of the oldest problems in Statistics is to deal with unbalanced data, for example, surviving data, credit risk, fraud. 
 
 Basically in any data where either your success rate is too high or too low, models are almost irrelavant. This comes from the fact that we use a criteria around 1% to measure the accuracy of a model, ie, if my model predicts in the testing set 99% of the success (or failure depending on what you are trying to do), the model is a hero.
 
@@ -265,7 +259,7 @@ print("Percentage of Fraud: "+"{:.3%}".format(p));
 ```
 
     Percentage of Fraud: 0.173%
-
+    
 
 Now we know how low is the probability of a fradulent transactions to happen in our dataset (which here it will be treated as our success event). 
 
@@ -288,7 +282,7 @@ print("Percentage of Fraud in the train set: "+"{:.3%}".format(p_train))
 
     Percentage of Fraud in the test set: 0.172%
     Percentage of Fraud in the train set: 0.173%
-
+    
 
 This way the percentage of success was kept within the split. 
 
@@ -330,7 +324,7 @@ print("Percentage of Fraud in the train set: "+"{:.3%}".format(p_under))
 
     Percentage of Fraud in the test set: 50.000%
     Percentage of Fraud in the train set: 50.000%
-
+    
 
 Now the data has the same amount of success and failures.
 
@@ -432,7 +426,7 @@ lr = lr.fit()
     Optimization terminated successfully.
              Current function value: 0.209580
              Iterations 14
-
+    
 
 ## Scoring the model
 Now the most expected part of this tutorial, which is basically checking how many "rights and wrongs" we are getting, considering the model was created based on a dataset with a 50% of fraud occurrences, and then tested in a set with 0.17% of fraud occurrences.<br>
@@ -451,7 +445,7 @@ print("Percentage of Rights and Wrongs in the testing set "+"{:.3%}".format(scor
 ```
 
     Percentage of Rights and Wrongs in the testing set 99.261%
-
+    
 
 
 ```python
@@ -462,7 +456,7 @@ print('Number of Frauds in prediction data %s' % sum(y_t))
 
     Number of Frauds in real data 98
     Number of Frauds in prediction data 491
-
+    
 
 Now that we know the model is awesome, let's see where we are getting it wrong. The plot below shows how many false negatives and false positives we have. We see a lot more false positives (we are saying a transaction was fradulent even though it was not). This come from the 0.95 threeshold above, if you increase that value to 0.99 for example, you will increase the amount of false begatives as well. The statstician need to decide what is the optimum cut.
 
