@@ -1,19 +1,4 @@
-{
- "cells": [
-  {
-   "cell_type": "raw",
-   "metadata": {},
-   "source": [
-    "<code><script>\n",
-    "var myUrl = 'http://andresa.me/fraud_analysis_oversampling/';\n",
-    " \n",
-    "if(window.top.location.href !== myUrl) {\n",
-    "    window.top.location.href = myUrl;\n",
-    "}\n",
-    "</script></code>"
-   ]
-  },
-  {
+{  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
