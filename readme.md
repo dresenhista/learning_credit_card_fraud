@@ -16,19 +16,20 @@ In this project I will skip the descriptive analysis hoping that we all want to 
 # Importing Libraries
 
 In an early stage we will use a few of the most popular libraries such as pandas, numpy, matplotlib, sklearn, but also some for this particular type of problem such as imblearn, mlxtend and my favorite for logistic regression statsmodels.
+Last but not least, I built a few functions myself that I use every day when I am evaluating models. My functions are in the homemade.py file in this folder.
 
 
 
 ```python
 #import libraries
 #my functions
-from homemade import new_stepwise
-from homemade import confusion_matrix_lr
-from homemade import save_confusionmatrix 
-from homemade import order_correlation_matrix
-from homemade import remove_features
-from homemade import model_threshold_finder
-from homemade import draw_precision_recall
+from homemade import new_stepwise #feature selection
+from homemade import remove_features #part of the feature selection module
+from homemade import confusion_matrix_lr #plots confusion matrix given a trigger
+from homemade import save_confusionmatrix #saves the CM given a trigger
+from homemade import order_correlation_matrix 
+from homemade import model_threshold_finder #finds the optmum threshold of probability for the LR model
+from homemade import draw_precision_recall 
 
 
 
@@ -687,7 +688,7 @@ classification_3 = model_threshold_finder(start, interval, y_test, y_ns_prob, mo
 ![png](Credit%20Card%20Fraud%20detection_files/Credit%20Card%20Fraud%20detection_21_3.png)
 
 
-At this point we discarted the under sampling method, we still need to define what is fraud versus not, in another words what is the probability threshold that will classify a transaction as fraud versus not. We will use the function below to do it so.
+At this point we **discarted the under sampling method,** however we still need to define what is fraud versus not, in another words what is the probability threshold that will classify a transaction as fraud versus not. We will use the function below to do it so.
 
 
 ```python
